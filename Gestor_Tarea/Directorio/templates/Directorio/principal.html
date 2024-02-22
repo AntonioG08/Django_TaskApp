@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<!-- Head section of the 'father' HTML document -->
+<head>
+    <meta charset="UTF-8">
+
+    <title>Task manager | {% block title %}{% endblock %}</title>
+
+    <!-- Estos links son para la fuente que baje de 'Google fonts', font Roboto Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap" rel="stylesheet">
+    <!-- Font Lato light 300-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
+    <!-- Padding es para dejar un espacio del borde superior -->
+    <style>
+        body{
+            background-color: #5DB9D9;
+            font-family: 'Roboto Mono', monospace;
+            padding-top: 30px;
+        }
+
+        .container{
+            max-width: 500px;
+            margin: auto;
+            background-color: #BAD8E3;
+            -webkit-box-shadow: 2px 2px 13px -4px rgba(0, 0, 0.21);
+            box-shadow: 2px 2px 13px -4px rgba(0, 0, 0.21);
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Lato', sans-serif;
+        }
+
+        a,
+        p {
+            color: #18637D;
+        }
+
+        .barra-superior{
+            display: flex;
+            justify-content: space-between;
+            color: #ffffff;
+            padding: 10px;
+            border-radius: 5px 5px 0 0;
+            background: linear-gradient(90deg, #79D0F0 0%, #21A5D5 43%, #21A5D5 100%);
+        }
+
+        .barra-superior a {
+            color: rgb(255, 255, 255);
+            text-decoration: none;
+        }
+
+        .envoltorio-tarea{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 5px;
+            border-top: 1px solid rgb(200 200 200);
+        }
+
+        .titulo-tarea{
+            display: flex;
+            font-size: 17px;
+        }
+
+        .titulo-tarea a {
+            text-decoration: none;
+            color: #4b5156;
+            margin-left: 10px;
+        }
+
+        .icono-tarea-completa{
+            height: 20px;
+            width: 40px;
+            background-color: rgb(105, 162, 105);
+            border-radius: 50px;
+        }
+
+        .icono-tarea-incompleta{
+            height: 20px;
+            width: 40px;
+            background-color: rgb(218, 218, 218);
+            border-radius: 50px;
+        }
+
+        .enlace-eliminar{
+            text-decoration: none;
+            font-weight: 900;
+            color: #EA4220;
+            font-size: 13px;
+            line-height: 0;
+        }
+
+        #envoltorio-agregar-buscar{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+        }
+
+        #enlace-agregar{
+            color: #EA4220;
+            text-decoration: none;
+            font-size: 16px;
+            text-shadow: 1px 1px #81413B;
+        }
+
+        label{
+            padding-top: 10px !important;
+            display: block;
+        }
+
+        .boton{
+            border: 1px solid #EB796F;
+            background-color: #FAFAFA;
+            color: #EB796F;
+            padding: 5px;
+            font-size: 14px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .cuerpo-tarjeta{
+            padding: 20px;
+        }
+
+
+    </style>
+    <!-- Esta será la página principal, y de aquí el estilo será heredada a las demás. Normalmente, esto se hace con
+     CSS o 'cascade style sheet'
+     Buscar 'google fonts' para fuentes gratuitas para proyectos
+     Buscar 'html color codes' para buscar códigos de colores
+     Buscar 'https://www.htmlsymbols.xyz/' para simbolos sacar el 'html entity hex' -->
+</head>
+
+<!-- Body section of the document -->
+<body>
+    <div class="container">
+        {% block content %}
+
+        {% endblock content %}
+    </div>
+
+</body>
+
+</html>

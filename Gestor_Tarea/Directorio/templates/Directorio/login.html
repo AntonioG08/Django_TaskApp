@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+
+{% extends 'Directorio/principal.html' %}
+
+<!-- Head section of this HTML document -->
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}  Inicio de sesión {% endblock %}</title>
+</head>
+
+
+{% block content %}
+<!-- Body section of the document -->
+<body>
+    <div class="barra-superior">
+        <h1>Ingresar</h1>
+    </div>
+
+    <div class="cuerpo-tarjeta">
+        <form method="POST">
+            {% csrf_token %}
+            {{form.as_p}}
+            <input class="boton" type="submit" value="Iniciar sesión">
+        </form>
+        <p>¿Aún no tienes una cuenta? <a href="{% url 'registro' %}">Registrate</a> </p>
+    </div>
+
+</body>
+{% endblock content %}
+
+</html>
+

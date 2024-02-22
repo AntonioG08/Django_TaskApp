@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<!-- HTML donde tenemos un formulario con la o las tareas nuevas que queremos crear-->
+
+{% extends 'Directorio/principal.html' %}
+
+
+<!-- Head section of this HTML document -->
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %} Tarea nueva {% endblock %} </title>
+</head>
+
+{% block content %}
+<!-- Body section of the document -->
+<body>
+    <div class="barra-superior">
+        <a href="{% url 'pendientes' %}">&#x21E4; Regresar</a>
+    </div>
+
+    <div class="cuerpo-tarjeta">
+        <h1> Formulario de tareas nuevas </h1>
+        <!-- Ya que anteriormente hemos ligado el formulario en los archivos models, views y 'urls', basta con llamar a
+        dicho formulario a continuación y el código sabrá cuál estamos solicitando-->
+        <form method="post" action="">
+            <!-- 'Cross site request forgery' es una manera de falsificar peticiones entre sitios cruzados, con la siguiente
+            línea estamos evitando un posible 'ataque' de seguridad -->
+            {% csrf_token %}
+            <!-- Para representar el formulario, podríamos hacerlo de las siguientes maneras; form.as_table, form.as_ul,
+            form.as_p-->
+            {{form.as_p}}
+            <input class="boton" type="submit" value="Aceptar">
+        </form>
+    </div>
+</body>
+{% endblock content %}
+
+</html>
+

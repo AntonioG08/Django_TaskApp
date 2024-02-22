@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+
+{% extends 'Directorio/principal.html' %}
+
+<!-- Head section of this HTML document -->
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %} Registrarse {% endblock %}</title>
+</head>
+
+{% block content %}
+<!-- Body section of the document -->
+<body>
+    <div class="barra-superior">
+        <h1>Registrate</h1>
+    </div>
+
+    <div class="cuerpo-tarjeta">
+        <form method="POST">
+            {% csrf_token %}
+            <!-- Por como hemos configurado hasta ahora las cosas, el programa entenderá en automático
+            que nos referimos al formulario de inicio de sesión -->
+            <label>{{form.username.label}}</label>
+                {{form.username}}
+
+            <label>{{form.password1.label}}</label>
+                {{form.password1}}
+
+            <label>{{form.password2.label}}</label>
+                {{form.password2}}
+
+        </form>
+        <input style="margin-top: 10px" class="boton" type="submit" value="Registrar">
+        <p>¿Ya tienes una cuenta? <a href="{% url 'login' %}">Ingresa</a> </p>
+    </div>
+
+</body>
+{% endblock content %}
+
+</html>
+

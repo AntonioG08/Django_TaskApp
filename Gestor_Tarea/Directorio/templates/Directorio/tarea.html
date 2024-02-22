@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<!-- HTML donde vemos los detalles de una tarea particular -->
+{% extends 'Directorio/principal.html' %}
+
+
+<!-- Head section of this HTML document -->
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}  Asistente de tareas {% endblock %}</title>
+</head>
+
+{% block content %}
+<!-- Body section of the document -->
+<body>
+    <h1>Tarea: {{tarea}}</h1>
+    <a href="{% url 'pendientes' %}">Regresar</a>
+</body>
+{% endblock content %}
+
+</html>
+
